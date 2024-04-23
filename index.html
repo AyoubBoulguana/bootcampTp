@@ -1,0 +1,158 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>bootCamp</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com "></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            JetBrainsMono: ["JetBrains Mono", "monospace"],
+          },
+
+          extend: {
+            colors: {
+              mainColor: "#08070B",
+              formColor: "#24232C",
+              lightGreen: "#A4FFAF",
+              textColor: "#E6E5EA",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-mainColor flex justify-center items-center font-JetBrainsMono"
+  >
+    <div id="passeForm">
+      <div>
+        <div class="flex justify-center">
+          <h1
+            class="text-formColor font-bold text-[16px] sm:text-3xl mb-[16px]"
+          >
+            Password Generator
+          </h1>
+        </div>
+        <div class="flex items-center bg-formColor mb-[24px]">
+          <input
+            type="text"
+            readonly
+            class="bg-formColor px-[19px] px-[32px] text-[24px] sm:text-5xl text-textColor"
+            id="outPut"
+            value="enter your code!"
+          />
+          <img
+            src="images/fa-regular_copy.png"
+            alt=""
+            class="w-[10px] sm:w-[20px] h-[10px] sm:h-[20px]"
+            id="toCopy"
+          />
+        </div>
+      </div>
+      <div class="bg-formColor px-[15px] sm:px-[32px] py-[24px] space-y-[42px]">
+        <div class="flex justify-between items-center">
+          <div>
+            <h3 class="text-[16px] sm:text-2xl text-textColor">
+              Character Length
+            </h3>
+          </div>
+          <div>
+            <h3
+              class="outPutNumber text-[18px] sm:text-[32px] text-lightGreen font-semibold"
+              id="Number"
+            >
+              10
+            </h3>
+          </div>
+        </div>
+        <div>
+          <input
+            type="range"
+            min="1"
+            max="20"
+            value="0"
+            id="inputSlider"
+            class="bg-lightGreen w-full accent-lightGreen"
+          />
+        </div>
+
+        <div class="space-y-[12px] sm:space-y-[19px]">
+          <div class="space-x-[12px] sm:space-x-[24px]">
+            <input
+              type="checkbox"
+              name="lowercase"
+              id="upercase"
+              checked
+              class="accent-lightGreen w-[10px] sm:w-[20px] h-[10px] sm:h-[20px]"
+            />
+            <label
+              for="lowercase"
+              class="text-textColor text-[16px] sm:text-[18px] font-semibold"
+              >Include Uppercase Letters</label
+            >
+          </div>
+          <div class="space-x-[12px] sm:space-x-[24px]">
+            <input
+              type="checkbox"
+              name="lowercase"
+              id="lowercase"
+              checked
+              class="accent-lightGreen w-[10px] sm:w-[20px] h-[10px] sm:h-[20px]"
+            />
+            <label
+              for="lowercase"
+              class="text-textColor text-[16px] sm:text-[18px] font-semibold"
+              >Include Lowercase Letters</label
+            >
+          </div>
+          <div class="space-x-[12px] sm:space-x-[24px]">
+            <input
+              type="checkbox"
+              name="lowercase"
+              id="includedNumber"
+              checked
+              class="accent-lightGreen w-[10px] sm:w-[20px] h-[10px] sm:h-[20px]"
+            />
+            <label
+              for="lowercase"
+              class="text-textColor text-[16px] sm:text-[18px] font-semibold"
+              >Include Numbers</label
+            >
+          </div>
+          <div class="space-x-[12px] sm:space-x-[24px]">
+            <input
+              type="checkbox"
+              name="lowercase"
+              id="symbol"
+              checked
+              class="accent-lightGreen w-[10px] sm:w-[20px] h-[10px] sm:h-[20px]"
+            />
+            <label
+              for="lowercase"
+              class="text-textColor text-[16px] sm:text-[18px] font-semibold"
+              >Include Symbols</label
+            >
+          </div>
+        </div>
+        <button
+          class="bg-lightGreen flex items-center justify-center w-full py-[20px]"
+          id="generate"
+        >
+          <div class="flex items-center gap-[24px]">
+            <p class="text-[12px] sm:text-[18px] font-semibold">GENERATE</p>
+            <img
+              src="images/bx_arrow-to-left.png"
+              alt=""
+              class="w-[12px] h-[12px]"
+            />
+          </div>
+        </button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
